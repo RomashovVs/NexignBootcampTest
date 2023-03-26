@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class UtilsDate {
 
-    public static Date convertStringToTimestamp(String dateString) throws ParseException {
+    public static Date convertStringToData(String dateString) throws ParseException {
         return new SimpleDateFormat("yyyyMMddHHmmss").parse(dateString);
     }
 
