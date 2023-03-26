@@ -1,21 +1,35 @@
 package romashov.vsevolod;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.util.Date;
+
+import utils.UtilsDate;
 
 public class Record {
     private String typeRecord;
     private String number;
-    private Timestamp startRecordDate;
-    private Timestamp endRecordDate;
+    private Date startRecordDate;
+    private Date endRecordDate;
     private String typeTariff;
 
-    public Record(String typeRecord, String number, Timestamp startRecordDate,
-                  Timestamp endRecordDate, String typeTariff) {
+    public Record(String typeRecord, String number, Date startRecordDate,
+                  Date endRecordDate, String typeTariff) {
         this.typeRecord = typeRecord;
         this.number = number;
         this.startRecordDate = startRecordDate;
         this.endRecordDate = endRecordDate;
         this.typeTariff = typeTariff;
+    }
+
+    public static Record createNewRecord(String readLineRecord) throws ParseException {
+        String[] arrayWordLine = readLineRecord.split(", ");
+
+        Date startRecordDate = UtilsDate.convertStringToTimestamp(arrayWordLine[2]);
+        Date endRecordDate = UtilsDate.convertStringToTimestamp(arrayWordLine[3]);
+
+        return new Record(arrayWordLine[0], arrayWordLine[1],
+                startRecordDate, endRecordDate, arrayWordLine[4]);
     }
 
     public String getTypeRecord() {
@@ -34,7 +48,7 @@ public class Record {
         this.number = number;
     }
 
-    public Timestamp getStartRecordDate() {
+    public Date getStartRecordDate() {
         return startRecordDate;
     }
 
@@ -42,7 +56,7 @@ public class Record {
         this.startRecordDate = startRecordDate;
     }
 
-    public Timestamp getEndRecordDate() {
+    public Date getEndRecordDate() {
         return endRecordDate;
     }
 
