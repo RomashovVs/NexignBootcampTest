@@ -36,4 +36,11 @@ public class UtilsWriter {
                 cost));
         writer.write("\n");
     }
+
+    public static void printFooterReport(Double totalSum, FileWriter writer) throws IOException {
+        writer.write("----------------------------------------------------------------------------\n");
+        writer.write(String.format("|                                           Total Cost: |     %5.2f rubles |\n",
+                totalSum));
+        writer.write("----------------------------------------------------------------------------\n");
+    }
 }

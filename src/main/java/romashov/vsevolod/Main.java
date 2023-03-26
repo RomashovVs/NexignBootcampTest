@@ -1,7 +1,6 @@
 package romashov.vsevolod;
 
 import utils.RecordComparator;
-import utils.UtilsDate;
 import utils.UtilsWriter;
 
 import java.io.BufferedReader;
@@ -9,13 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -93,24 +86,9 @@ public class Main {
                 cost = totalMinutesPepPeriod - maxMinutes;
             }
 
-            /*String startTimeStr = UtilsDate.convertDateToString(record.getStartRecordDate());
-            String endTimeStr = UtilsDate.convertDateToString(record.getEndRecordDate());
-
-            String formatterDuration = UtilsDate.duration(record.getStartRecordDate(), record.getEndRecordDate());
-
-            writer.write(String.format("%-12s%-22s%-22s%-11s| %5.2f |",
-                    "|     ".concat(record.getTypeRecord()),
-                    "| ".concat(startTimeStr),
-                    "| ".concat(endTimeStr),
-                    "| ".concat(formatterDuration),
-                    cost));
-            writer.write("\n");*/
             UtilsWriter.printBodyLineReport(record, cost, writer);
 
         }
-        writer.write("----------------------------------------------------------------------------\n");
-        writer.write(String.format("|                                           Total Cost: |     %5.2f rubles |\n",
-                totalSum));
-        writer.write("----------------------------------------------------------------------------\n");
+        UtilsWriter.printFooterReport(totalSum, writer);
     }
 }
