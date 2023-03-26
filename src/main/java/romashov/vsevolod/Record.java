@@ -25,8 +25,8 @@ public class Record {
     public static Record createNewRecord(String readLineRecord) throws ParseException {
         String[] arrayWordLine = readLineRecord.split(", ");
 
-        Date startRecordDate = UtilsDate.convertStringToTimestamp(arrayWordLine[2]);
-        Date endRecordDate = UtilsDate.convertStringToTimestamp(arrayWordLine[3]);
+        Date startRecordDate = UtilsDate.convertStringToData(arrayWordLine[2]);
+        Date endRecordDate = UtilsDate.convertStringToData(arrayWordLine[3]);
 
         return new Record(arrayWordLine[0], arrayWordLine[1],
                 startRecordDate, endRecordDate, arrayWordLine[4]);
