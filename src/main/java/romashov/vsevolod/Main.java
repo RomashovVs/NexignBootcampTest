@@ -1,7 +1,7 @@
 package romashov.vsevolod;
 
-import utils.Generator;
-import utils.Reader;
+import romashov.vsevolod.utils.Generator;
+import romashov.vsevolod.utils.Reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

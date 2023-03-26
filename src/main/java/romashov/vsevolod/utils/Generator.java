@@ -1,4 +1,4 @@
-package utils;
+package romashov.vsevolod.utils;
 
 import romashov.vsevolod.Record;
 

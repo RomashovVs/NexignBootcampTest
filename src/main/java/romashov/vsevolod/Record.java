@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.Date;
 
-import utils.UtilsDate;
+import romashov.vsevolod.utils.UtilsDate;
 
 public class Record {
     private String typeRecord;

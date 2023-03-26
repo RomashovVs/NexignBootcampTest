@@ -1,4 +1,4 @@
-package utils;
+package romashov.vsevolod.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
